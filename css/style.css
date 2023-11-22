@@ -9,18 +9,28 @@
     background:url("../img\ /mine.jpg")
 }
 .message{
-    min-width: 10%;
+    min-width: 3%;
     padding: 5px;
     padding-left:10px ;
     border-radius: 15px;
 }
 .send{
     background-color: green;
+    color: white;
+
 
 }
+
 .recived{
-    background-color:rgb(77, 76, 76);
     color: white;
+}
+.recivedbox{
+    display: flex;
+    justify-content: start;
+}
+.sendbox{
+    display: flex;
+    justify-content: end;
 }
 .write-bar{background-color: rgb(200, 200, 200);}
 

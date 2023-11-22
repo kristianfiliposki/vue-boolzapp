@@ -82,29 +82,11 @@
                 <!-- chat -->
                 <div class="w-100 h-80 message-space p-16">
                     <!-- messaggi -->
-                    <div class="w-100">
-<!--                        <div class="bg-grey w-10 message  m-16" :class="{recived: (users[0].messages.recived[0])}, {send: (users[0].messages.send[0])}">{{users[0].messages.recived[0]}}</div>-->
-                            
-                            <div class="w-100 h-20 d-flex justify-end">
-                                <div class="bg-grey w-10 message send m-16">{{users[0].messages.send[0].messaggio}}</div>
+
+                    <div class="w-100" >
+                            <div class="w-100 h-20 " :class='{sendbox : (messaggio.status=="send")},{recivedbox : (messaggio.status=="recived")}' v-for="(messaggio,i) in users[0].messages">
+                                <div class="bg-grey w-20 message send m-16" :class='{send : (messaggio.status=="send")},{recived : (messaggio.status=="recived")}' >{{users[0].messages[i].messaggio}} {{users[0].messages[i].ora}}</div>
                             </div>
-
-                            <div class="w-100 h-20" :class="">
-                                <div class="bg-grey w-10 message recived m-16">{{users[0].messages.recived[0].messaggio}}</div>
-                            </div>
-
-                            <div class="w-100 h-20">
-                                <div class="bg-grey w-10 message send m-16">{{users[0].messages.send[1].messaggio}}</div>
-                            </div>
-
-                            <div class="w-100 h-20">
-                                <div class="bg-grey w-10 message send m-16">{{users[0].messages.recived[1].messaggio}}</div>
-                            </div>
-
-
-
-
-
                     </div>
                     
                 </div>
