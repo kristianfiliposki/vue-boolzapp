@@ -4,12 +4,13 @@ createApp({
     data() {
         return {
             count:0,
-            testo:"ciao",
+            testo:"",
             newmessage:
             {
-                messaggio:this.testo,
-                ora:"adesso",
-                status:"send",
+                status:"sent",
+                ora:"now",
+                messaggio:`${this.testo}`,
+                
             },
 
 
@@ -23,7 +24,7 @@ createApp({
                             [{
                                 messaggio:"hey",
                                 ora:"12:30",
-                                status:"send",
+                                status:"sent",
                             },
                             {
                                 messaggio:"hey",
@@ -33,7 +34,7 @@ createApp({
                             {
                                 messaggio:"come stai?",
                                 ora:"13,20",
-                                status:"send",
+                                status:"sent",
 
                             },
                             {
@@ -45,7 +46,7 @@ createApp({
                             {
                                 messaggio:"bene bene,ora vado a caccia di mostri",
                                 ora:"14,00",
-                                status:"send",
+                                status:"sent",
 
                             },
                             {
@@ -65,7 +66,7 @@ createApp({
                     [{
                         messaggio:"ciao",
                         ora:"12:30",
-                        status:"send"
+                        status:"sent"
                     },
                     {
                         messaggio:"A bello che dici?",
@@ -75,7 +76,7 @@ createApp({
                     {
                         messaggio:"tutto bene te?",
                         ora:"13,20",
-                        status:"send"
+                        status:"sent"
 
                     },
                     {
@@ -87,7 +88,7 @@ createApp({
                     {
                         messaggio:"io benissimo!",
                         ora:"14,00",
-                        status:"send"
+                        status:"sent"
 
                     },
                     {
@@ -109,7 +110,7 @@ createApp({
                     [{
                         messaggio:"woooo",
                         ora:"12:30",
-                        status:"send"
+                        status:"sent"
                     },
                     {
                         messaggio:"heyla",
@@ -119,7 +120,7 @@ createApp({
                     {
                         messaggio:"qual buon vento la porta in questa chat?",
                         ora:"13,20",
-                        status:"send"
+                        status:"sent"
 
                     },
                     {
@@ -131,7 +132,7 @@ createApp({
                     {
                         messaggio:"ok,ciao,è stato bello",
                         ora:"14,00",
-                        status:"send"
+                        status:"sent"
 
                     },
                 ]
@@ -140,7 +141,7 @@ createApp({
                 
 
                 },                {
-                    nome:"Giada",
+                    nome:"Alessandro",
                     accesso:"8:10",
                     count:"3",
                     srcImmagine:"./img /avatar_4.jpg",
@@ -148,7 +149,7 @@ createApp({
                     [{
                         messaggio:"allora ti ho scoperto",
                         ora:"12:30",
-                        status:"send"
+                        status:"sent"
                     },
                     {
                         messaggio:"dimmi",
@@ -158,7 +159,7 @@ createApp({
                     {
                         messaggio:"mi hai mangiato tutte la patine",
                         ora:"13,20",
-                        status:"send"
+                        status:"sent"
 
                     },
                     {
@@ -170,7 +171,7 @@ createApp({
                     {
                         messaggio:"non parlarmi piu!!!",
                         ora:"14,00",
-                        status:"send"
+                        status:"sent"
 
                     },
                 ]
@@ -187,7 +188,7 @@ createApp({
                     [{
                         messaggio:"sisi",
                         ora:"12:30",
-                        status:"send"
+                        status:"sent"
                     },
                     {
                         messaggio:"cosa?",
@@ -197,7 +198,7 @@ createApp({
                     {
                         messaggio:"vieni domani?",
                         ora:"13,20",
-                        status:"send"
+                        status:"sent"
 
                     },
                     {
@@ -213,7 +214,7 @@ createApp({
 
                 },
                 {
-                    nome:"Livia",
+                    nome:"Giada",
                     count:"5",
                     accesso:"7:00",
                     srcImmagine:"./img /avatar_6.jpg",
@@ -221,7 +222,7 @@ createApp({
                     [{
                         messaggio:"hey",
                         ora:"12:30",
-                        status:"send"
+                        status:"sent"
                     },
                 ]
 
@@ -238,7 +239,7 @@ createApp({
                     [{
                         messaggio:"hey",
                         ora:"12:30",
-                        status:"send",
+                        status:"sent",
                     },
                     {
                         messaggio:"hey",
@@ -248,7 +249,7 @@ createApp({
                     {
                         messaggio:"come stai?",
                         ora:"13,20",
-                        status:"send",
+                        status:"sent",
 
                     },
                     {
@@ -260,7 +261,7 @@ createApp({
                     {
                         messaggio:"che ti dico come sempre",
                         ora:"14,00",
-                        status:"send",
+                        status:"sent",
 
                     },
                     {
@@ -272,7 +273,7 @@ createApp({
                     {
                         messaggio:"purtroppo si",
                         ora:"13,30",
-                        status:"send",
+                        status:"sent",
 
                     },
                     {
@@ -290,7 +291,7 @@ createApp({
                     {
                         messaggio:"non fosse stato per lui",
                         ora:"14,00",
-                        status:"send",
+                        status:"sent",
 
                     },
                     {
@@ -308,7 +309,7 @@ createApp({
                     {
                         messaggio:"il maiale dalle uova d'oro",
                         ora:"14,00",
-                        status:"send",
+                        status:"sent",
 
                     },
                 ],
@@ -328,7 +329,7 @@ createApp({
                     [{
                         messaggio:"hey",
                         ora:"12:30",
-                        status:"send",
+                        status:"sent",
                     },
                     {
                         messaggio:"hey",
@@ -338,7 +339,7 @@ createApp({
                     {
                         messaggio:"come stai?",
                         ora:"13,20",
-                        status:"send",
+                        status:"sent",
 
                     },
                     {
@@ -350,7 +351,7 @@ createApp({
                     {
                         messaggio:"come stai?",
                         ora:"14,00",
-                        status:"send",
+                        status:"sent",
 
                     },
                     {
@@ -367,7 +368,8 @@ createApp({
         changeclass(index){
          this.count=index
         },
-        send(){
+        sent(){
+            console.log(this.users[0].messages)
             this.users[0].messages.push(this.newmessage.messaggio);
         },
     
