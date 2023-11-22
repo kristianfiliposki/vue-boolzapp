@@ -4,6 +4,15 @@ createApp({
     data() {
         return {
             count:0,
+            testo:"ciao",
+            newmessage:
+            {
+                messaggio:this.testo,
+                ora:"adesso",
+                status:"send",
+            },
+
+
             users:[
                 {
                     nome:"kristian",
@@ -229,77 +238,77 @@ createApp({
                     [{
                         messaggio:"hey",
                         ora:"12:30",
-                        status:"send"
+                        status:"send",
                     },
                     {
                         messaggio:"hey",
                         ora:"12:31",
-                        status:"recived"
+                        status:"recived",
                     },
                     {
                         messaggio:"come stai?",
                         ora:"13,20",
-                        status:"send"
+                        status:"send",
 
                     },
                     {
                         messaggio:"bene grazie te?",
                         ora:"13,30",
-                        status:"recived"
+                        status:"recived",
 
                     },
                     {
                         messaggio:"che ti dico come sempre",
                         ora:"14,00",
-                        status:"send"
+                        status:"send",
 
                     },
                     {
                         messaggio:"stai pensando ancora a franceschina del ducato di savoia?",
                         ora:"15:40",
-                        status:"recived"
+                        status:"recived",
 
                     },
                     {
                         messaggio:"purtroppo si",
                         ora:"13,30",
-                        status:"recived"
+                        status:"send",
 
                     },
                     {
                         messaggio:"ma tu sei matto",
                         ora:"14,00",
-                        status:"send"
+                        status:"recived",
 
                     },
                     {
                         messaggio:"le nostre famiglie si sono odiate per quel maiale",
                         ora:"15:40",
-                        status:"recived"
+                        status:"recived",
 
                     },
                     {
                         messaggio:"non fosse stato per lui",
                         ora:"14,00",
-                        status:"send"
+                        status:"send",
 
                     },
                     {
                         messaggio:"ora ci hanno fatto le salsicce",
                         ora:"15:40",
-                        status:"recived"
+                        status:"recived",
 
                     },
                     {
                         messaggio:"pensa che spreco",
                         ora:"13,30",
-                        status:"recived"
+                        status:"recived",
 
                     },
                     {
                         messaggio:"il maiale dalle uova d'oro",
                         ora:"14,00",
-                        status:"send"
+                        status:"send",
 
                     },
                 ],
@@ -319,35 +328,35 @@ createApp({
                     [{
                         messaggio:"hey",
                         ora:"12:30",
-                        status:"send"
+                        status:"send",
                     },
                     {
                         messaggio:"hey",
                         ora:"12:31",
-                        status:"recived"
+                        status:"recived",
                     },
                     {
                         messaggio:"come stai?",
                         ora:"13,20",
-                        status:"send"
+                        status:"send",
 
                     },
                     {
                         messaggio:"bene grazie te?",
                         ora:"13,30",
-                        status:"recived"
+                        status:"recived",
 
                     },
                     {
                         messaggio:"come stai?",
                         ora:"14,00",
-                        status:"send"
+                        status:"send",
 
                     },
                     {
                         messaggio:"bene grazie",
                         ora:"15:40",
-                        status:"recived"
+                        status:"recived",
 
                     }],
                 },
@@ -357,7 +366,10 @@ createApp({
     methods: {
         changeclass(index){
          this.count=index
-        }
+        },
+        send(){
+            this.users[0].messages.push(this.newmessage.messaggio);
+        },
     
     },
     mounted() {
