@@ -13,7 +13,7 @@
     <div id="app">
         <div id="container" class="d-flex">
             <!-- chat degli utenti -->
-            <div id="viewUsers" class="bg-red vw-30 vh-100">
+            <div id="viewUsers" class=" vw-30 vh-100">
                 <!-- header della chat aperta -->
                 <div class="w-100 h-10 bg-white d-flex flex-justify-between">
                     <!-- box my-user -->
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <!-- search-bar-users -->
-                <div class="w-100 h-5 bg-green d-flex flex-justify-center flex-align-center relative">
+                <div class="w-100 h-5  d-flex flex-justify-center flex-align-center relative">
                     <div class="lente"><i class="fa-solid fa-magnifying-glass "></i></div>
                     <input type="text" placeholder="             cerca o inizia una nuova chat" class="w-90 h-80">
                 </div>
@@ -83,11 +83,28 @@
                 <div class="w-100 h-80 message-space p-16">
                     <!-- messaggi -->
                     <div class="w-100">
-                        <div class="bg-grey w-10 message  m-16" :class="{recived: (users[0].messages.recived[0])}, {send: (users[0].messages.send[0])}">{{users[0].messages.recived[0]}}</div>
-                        <div class="bg-grey w-10 message send m-16">{{users[0].messages.send[0]}}</div>
+<!--                        <div class="bg-grey w-10 message  m-16" :class="{recived: (users[0].messages.recived[0])}, {send: (users[0].messages.send[0])}">{{users[0].messages.recived[0]}}</div>-->
+                            
+                            <div class="w-100 h-20 d-flex justify-end">
+                                <div class="bg-grey w-10 message send m-16">{{users[0].messages.send[0].messaggio}}</div>
+                            </div>
 
-                        <div class="bg-grey w-10 message send m-16">{{users[0].messages.recived[1]}}</div>
-                        <div class="bg-grey w-10 message send m-16">{{users[0].messages.send[1]}}</div>
+                            <div class="w-100 h-20" :class="">
+                                <div class="bg-grey w-10 message recived m-16">{{users[0].messages.recived[0].messaggio}}</div>
+                            </div>
+
+                            <div class="w-100 h-20">
+                                <div class="bg-grey w-10 message send m-16">{{users[0].messages.send[1].messaggio}}</div>
+                            </div>
+
+                            <div class="w-100 h-20">
+                                <div class="bg-grey w-10 message send m-16">{{users[0].messages.recived[1].messaggio}}</div>
+                            </div>
+
+
+
+
+
                     </div>
                     
                 </div>
@@ -98,7 +115,6 @@
                         <input type="text" class="w-70 h-40 p-16 write" placeholder="scrivi un messaggio">
                     </div>
                     <div class="c-grey fe-1-5 d-flex flex-align-center mr-64"><i class="fa-solid fa-microphone"></i></div>
-
                 </div>
                 
             </div>
