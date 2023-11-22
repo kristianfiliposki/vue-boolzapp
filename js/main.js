@@ -364,13 +364,25 @@ createApp({
             let newmessage=
             {
                 status:"sent",
-                ora:"now",
+                ora:"poco fa",
                 messaggio:`${this.testo}`,
-                
+
             };
 
             console.log(this.users[0].messages);
             this.users[0].messages.push(newmessage);
+
+            const myTimeout = setTimeout(()=>{
+                let bot=
+                {
+                    status:"recived",
+                    ora:"adesso",
+                    messaggio:`hey purtroppo ora il tuo amico e offlline. Io sono il Bot e da ora in poi ti risponderò io!`,
+                    
+                };
+                this.users[0].messages.push(bot);
+            }, 1200);
+
         },
     
     },
