@@ -5,8 +5,10 @@
     position: absolute;
     left: 10%;
 }
-.message-space{
-    background:url("../img\ /mine.jpg")
+.message-background{
+    background:url("../img\ /mine.jpg");
+    overflow-y: auto;
+
 }
 .message{
     min-width: 3%;

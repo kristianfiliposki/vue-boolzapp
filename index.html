@@ -42,7 +42,7 @@
                     <!-- box-users -->
                     <div class=" m-8  p-4  h-100 " >
                         <!-- user -->
-                        <div v-for="user in users" class="d-flex flex-align-start mt-16 mb-16 user">
+                        <div v-for="(user,i) in users" class="d-flex flex-align-start mt-16 mb-16 user" @click="changeclass(i)">
                             <div class="img-user w-10 h-30 m-8">
                                 <img class="w-100 h-100 img-user"  :src="user.srcImmagine" alt="">
                             </div>
@@ -80,12 +80,12 @@
 
                 </div>
                 <!-- chat -->
-                <div class="w-100 h-80 message-space p-16">
+                <div class="w-100 h-80 message-background p-16">
                     <!-- messaggi -->
 
-                    <div class="w-100" >
-                            <div class="w-100 h-20 " :class='{sendbox : (messaggio.status=="send")},{recivedbox : (messaggio.status=="recived")}' v-for="(messaggio,i) in users[0].messages">
-                                <div class="bg-grey w-20 message send m-16" :class='{send : (messaggio.status=="send")},{recived : (messaggio.status=="recived")}' >{{users[0].messages[i].messaggio}} {{users[0].messages[i].ora}}</div>
+                    <div class="w-100" id="message-space" >
+                            <div class="w-100 h-20 " :class='{sendbox : (messaggio.status=="send")},{recivedbox : (messaggio.status=="recived")}' v-for="(messaggio,i) in users[this.count].messages">
+                                <div class="bg-grey w-20 message send m-16" :class='{send : (messaggio.status=="send")},{recived : (messaggio.status=="recived")}' >{{users[this.count].messages[i].messaggio}} {{users[this.count].messages[i].ora}}</div>
                             </div>
                     </div>
                     
@@ -98,7 +98,6 @@
                     </div>
                     <div class="c-grey fe-1-5 d-flex flex-align-center mr-64"><i class="fa-solid fa-microphone"></i></div>
                 </div>
-                
             </div>
         </div>
     </div>
