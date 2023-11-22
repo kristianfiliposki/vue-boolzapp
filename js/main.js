@@ -5,14 +5,6 @@ createApp({
         return {
             count:0,
             testo:"",
-            newmessage:
-            {
-                status:"sent",
-                ora:"now",
-                messaggio:`${this.testo}`,
-                
-            },
-
 
             users:[
                 {
@@ -369,8 +361,16 @@ createApp({
          this.count=index
         },
         sent(){
-            console.log(this.users[0].messages)
-            this.users[0].messages.push(this.newmessage.messaggio);
+            let newmessage=
+            {
+                status:"sent",
+                ora:"now",
+                messaggio:`${this.testo}`,
+                
+            };
+
+            console.log(this.users[0].messages);
+            this.users[0].messages.push(newmessage);
         },
     
     },
