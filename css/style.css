@@ -1,0 +1,29 @@
+.img-user{border-radius: 15px;}
+.user{ border: 1px solid white}
+.users-list{overflow-y: auto;}
+.lente{   
+    position: absolute;
+    left: 10%;
+}
+.message-space{
+    background:url("../img\ /mine.jpg")
+}
+.message{
+    min-width: 10%;
+    padding: 5px;
+    padding-left:10px ;
+    border-radius: 15px;
+}
+.send{
+    background-color: green;
+
+}
+.recived{
+    background-color:rgb(77, 76, 76);
+    position: absolute;
+    right: 2%;
+    color: white;
+}
+.write-bar{background-color: rgb(200, 200, 200);}
+
+.write{border-radius: 12px;}
