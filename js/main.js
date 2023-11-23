@@ -217,7 +217,7 @@ const vue=createApp({
                 },                
                 {
                     /* utente 4 */
-                    nome:"Francesca",
+                    nome:"Francesco",
                     count:"3",
                     value:false,
                     accesso:"15:01",
