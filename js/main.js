@@ -3,67 +3,75 @@ const { createApp } = Vue
 const vue=createApp({
     data() {
         return {
+            /* io sono Kristian */
+            iAm:                {
+                nome:"kristian",
+                count:"0",
+                value:false,
+                accesso:"12:08",
+                srcImmagine:`./img /avatar_1.jpg`,
+                messages:
+                        [{
+                            messaggio:"hey",
+                            ora:"12:30",
+                            status:"sent",
+                        },
+                        {
+                            messaggio:"hey",
+                            ora:"12:31",
+                            status:"recived",
+                           
+
+                        },
+                        {
+                            messaggio:"come stai?",
+                            ora:"13,20",
+                            status:"sent",
+                         
+
+
+                        },
+                        {
+                            messaggio:"bene grazie te?",
+                            ora:"13,30",
+                            status:"recived",
+                  
+
+                        },
+                        {
+                            messaggio:"bene bene,ora vado a caccia di mostri",
+                            ora:"14,00",
+                            status:"sent",
+                   
+
+
+                        },
+                        {
+                            messaggio:"grande,io sono tornato da Venere poco fa",
+                            ora:"15:40",
+                            status:"recived",
+                        
+
+
+                        }],
+            },
+            /* io sono Kristian */
+
+            /* dati */
+            /* contatore */
             count:0,
-            Nmessage:0,
+            /* testo scritto dall'utente nel messaggio */
             testo:"",
+            /* ricerca degli utenti presenti nelle tue chat */
             ricerca:"",
+
+
+            /* utenti */
             users:[
                 {
-                    nome:"kristian",
-                    count:"0",
-                    value:false,
-                    accesso:"12:08",
-                    srcImmagine:`./img /avatar_1.jpg`,
-                    messages:
-                            [{
-                                messaggio:"hey",
-                                ora:"12:30",
-                                status:"sent",
-                                Nmessage:0,
-                            },
-                            {
-                                messaggio:"hey",
-                                ora:"12:31",
-                                status:"recived",
-                                Nmessage:1,
-
-                            },
-                            {
-                                messaggio:"come stai?",
-                                ora:"13,20",
-                                status:"sent",
-                                Nmessage:2,
-
-
-                            },
-                            {
-                                messaggio:"bene grazie te?",
-                                ora:"13,30",
-                                status:"recived",
-                                Nmessage:3,
-
-
-                            },
-                            {
-                                messaggio:"bene bene,ora vado a caccia di mostri",
-                                ora:"14,00",
-                                status:"sent",
-                                Nmessage:4,
-
-
-                            },
-                            {
-                                messaggio:"grande,io sono tornato da Venere poco fa",
-                                ora:"15:40",
-                                status:"recived",
-                                Nmessage:5,
-
-
-                            }],
-                },
-                {
+                    /* utente 1 */
                     nome:"Giacomo",
-                    count:"1",
+                    count:"0",
                     value:false,
                     accesso:"13:30",
                     srcImmagine:"./img /avatar_2.jpg",
@@ -102,9 +110,11 @@ const vue=createApp({
                         status:"recived"
 
                     }],                    
-                },                {
+                },                
+                {
+                    /* utente 2 */                    
                     nome:"Luca",
-                    count:"2",
+                    count:"1",
                     value:false,
                     accesso:"9:00",
                     srcImmagine:"./img /avatar_3.jpg",
@@ -138,10 +148,12 @@ const vue=createApp({
 
                     },
                 ]
-                },                {
+                },                
+                {
+                    /* utente 3 */
                     nome:"Alessandro",
                     accesso:"8:10",
-                    count:"3",
+                    count:"2",
                     value:false,
                     srcImmagine:"./img /avatar_4.jpg",
                     messages:
@@ -174,9 +186,11 @@ const vue=createApp({
 
                     },
                 ]
-                },                {
+                },                
+                {
+                    /* utente 4 */
                     nome:"Francesca",
-                    count:"4",
+                    count:"3",
                     value:false,
                     accesso:"15:01",
                     srcImmagine:"./img /avatar_5.jpg",
@@ -205,8 +219,9 @@ const vue=createApp({
                     },]
                 },
                 {
+                    /* utente 5 */
                     nome:"Giada",
-                    count:"5",
+                    count:"4",
                     value:false,
                     accesso:"7:00",
                     srcImmagine:"./img /avatar_6.jpg",
@@ -219,8 +234,9 @@ const vue=createApp({
                 ]
                 },
                 {
+                    /* utente 6 */
                     nome:"Augusto",
-                    count:"6",
+                    count:"5",
                     value:false,
                     accesso:"12:23",
                     srcImmagine:"./img /avatar_7.jpg",
@@ -304,8 +320,9 @@ const vue=createApp({
                 ],
                 },
                 {
+                    /* utente 7 */
                     nome:"Ferdinando",
-                    count:"7",
+                    count:"",
                     value:false,
                     accesso:"12:45",
                     srcImmagine:"./img /avatar_8.jpg",
@@ -348,22 +365,29 @@ const vue=createApp({
             ],
         }
     },
+    /* funzioni */
     methods: {
+        /* selezioni l'utente con cui vuoi parlare */
         changeclass(index){
          this.count=index
         },
+        /* scrivi il tuo messaggio */
         sent(){
             let newmessage=
             {
+                /* diamo dei valori al messaggio appena inviato */
                 status:"sent",
                 ora:"poco fa",
+                /* prendi il testo inserito dall'utente attraverso l'input */
                 messaggio:`${this.testo}`,
 
             };
-
-            console.log(this.users[this.count].messages);
+            /* insersci il messaggio all'arrey dei messaggi dell'utente in questione */
             this.users[this.count].messages.push(newmessage);
+            /* mostra tutti i messaggi */
+            console.log(this.users[this.count].messages);
 
+            /* dopo 1,2s un bot genera un messaggio */
             const myTimeout = setTimeout(()=>{
                 let bot=
                 {
@@ -374,28 +398,35 @@ const vue=createApp({
                 };
                 this.users[this.count].messages.push(bot);
             }, 1200);
-
         },
+
+        /* ricerca degli utenti nelle chat */
         filterUser(){
+            /* per ognuno degli elementi */
             this.users.forEach((element, index)  => {
                 element.nome;
+                /* rendi tutti gli elementi,uno ad uno, true */
                 (element).value=true;
+                /* cerca se il valore digitato è presente nei nomi degli utenti */
                 if(element.nome.includes(this.ricerca)){
+                    /* se si allora */
+                    /* trova quei nomi */
                     console.log(element.nome);
+                    /* rendili falsi,diversi da tutti gli altri */
                     (element).value=false;
-                }
-                else{
-/*                     console.log("non è presente");
- */ 
+                    /* cosi che verrano nascosti */
                 }
             });
         },
+        /* cancella il messaggio selezionato */
         deletes(i){
             this.users[this.count].messages[i];
-            delete this.users[this.count].messages[i];
+            this.users.splice(this.users[this.count].messages[i]);
+
 
 
         },
+        /* scopri le informazione del messaggio */
         info(i){
             console.log(this.users[this.count].messages[i]);
         }
