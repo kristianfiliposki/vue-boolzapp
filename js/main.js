@@ -6,11 +6,12 @@ const vue=createApp({
             count:0,
             Nmessage:0,
             testo:"",
-
+            ricerca:"",
             users:[
                 {
                     nome:"kristian",
                     count:"0",
+                    value:true,
                     accesso:"12:08",
                     srcImmagine:`./img /avatar_1.jpg`,
                     messages:
@@ -59,11 +60,11 @@ const vue=createApp({
 
 
                             }],
-                        
                 },
                 {
                     nome:"Giacomo",
                     count:"1",
+                    value:true,
                     accesso:"13:30",
                     srcImmagine:"./img /avatar_2.jpg",
                     messages:
@@ -100,14 +101,11 @@ const vue=createApp({
                         ora:"15:40",
                         status:"recived"
 
-                    }],
-
-
-
-                    
+                    }],                    
                 },                {
                     nome:"Luca",
                     count:"2",
+                    value:true,
                     accesso:"9:00",
                     srcImmagine:"./img /avatar_3.jpg",
                     messages:
@@ -140,14 +138,11 @@ const vue=createApp({
 
                     },
                 ]
-
-
-                
-
                 },                {
                     nome:"Alessandro",
                     accesso:"8:10",
                     count:"3",
+                    value:true,
                     srcImmagine:"./img /avatar_4.jpg",
                     messages:
                     [{
@@ -179,13 +174,10 @@ const vue=createApp({
 
                     },
                 ]
-
-
-                
-
                 },                {
                     nome:"Francesca",
                     count:"4",
+                    value:true,
                     accesso:"15:01",
                     srcImmagine:"./img /avatar_5.jpg",
                     messages:
@@ -211,15 +203,11 @@ const vue=createApp({
                         status:"recived"
 
                     },]
-
-
-
-                
-
                 },
                 {
                     nome:"Giada",
                     count:"5",
+                    value:true,
                     accesso:"7:00",
                     srcImmagine:"./img /avatar_6.jpg",
                     messages:
@@ -229,14 +217,11 @@ const vue=createApp({
                         status:"sent"
                     },
                 ]
-
-
-                
-
                 },
                 {
                     nome:"Augusto",
                     count:"6",
+                    value:true,
                     accesso:"12:23",
                     srcImmagine:"./img /avatar_7.jpg",
                     messages:
@@ -317,16 +302,11 @@ const vue=createApp({
 
                     },
                 ],
-                
-
-
-
-                
-
                 },
                 {
                     nome:"Ferdinando",
                     count:"7",
+                    value:true,
                     accesso:"12:45",
                     srcImmagine:"./img /avatar_8.jpg",
                     messages:
@@ -381,8 +361,8 @@ const vue=createApp({
 
             };
 
-            console.log(this.users[0].messages);
-            this.users[0].messages.push(newmessage);
+            console.log(this.users[this.count].messages);
+            this.users[this.count].messages.push(newmessage);
 
             const myTimeout = setTimeout(()=>{
                 let bot=
@@ -392,15 +372,26 @@ const vue=createApp({
                     messaggio:`hey purtroppo ora il tuo amico è offlline. Io sono il Bot e da ora in poi ti risponderò io!`,
                     
                 };
-                this.users[0].messages.push(bot);
+                this.users[this.countè].messages.push(bot);
             }, 1200);
 
         },
         filterUser(){
-            console.log("sdsi")
+            this.users.forEach(element => {
+                element.nome;
+                if(element.nome.includes(this.ricerca)){
+                    console.log(element.nome);
+                    delete this.users[element.nome.includes(this.ricerca)];
+                }
+                else{
+                    console.log("non è presente");
+
+                }
+            });
         },
         deletes(){
-            console.log("oooooo")
+            console.log("oooooo");
+
         },
     
     },
