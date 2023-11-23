@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vue-boolzapp</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
     <div id="app">
@@ -34,8 +35,10 @@
                 </div>
                 <!-- search-bar-users -->
                 <div class="w-100 h-5  d-flex flex-justify-center flex-align-center relative">
-                    <div class="lente"><i class="fa-solid fa-magnifying-glass "></i></div>
-                    <input type="text" placeholder="             cerca o inizia una nuova chat" class="w-90 h-80">
+                    <div class="lente d-flex">
+                        <i class="fa-solid fa-magnifying-glass mr-8"></i>
+                        <input type="text" placeholder="cerca o inizia una nuova chat" class="w-100 h-100 search-user " @click="filterUser()">
+                    </div>
                 </div>
                 <!-- users-list -->
                 <div class="w-100 h-85 bg-white pt-8 users-list d-flex">
@@ -64,11 +67,11 @@
                 <div class=" h-10 bg-white d-flex flex-align-center flex-justify-between">
                     <div class="d-flex flex-justify-between">
                         <div class="img-user w-10 h-80 m-8 ">
-                            <img class="w-100 h-100 img-user"  :src="users[0].srcImmagine" alt="">
+                            <img class="w-100 h-100 img-user"  :src="users[this.count].srcImmagine" alt="">
                         </div>
                         <div class=" w-100 h-100 mt-8">
-                            <h3 class="fe-1-5">kristian</h3>
-                            <div class="fe-0-7 flex-align-">ultimo messaggio inviato: {{users[0].accesso}}</div> 
+                            <h3 class="fe-1-5">{{users[this.count].nome}}</h3>
+                            <div class="fe-0-7 flex-align-">ultimo messaggio inviato: {{users[this.count].accesso}}</div> 
                         </div>
                     </div>
                     
@@ -85,7 +88,30 @@
                     <div class="w-100" id="messageSpace" >
                             <!-- riproduci  ogni messaggio salvato nei dati di ogni utente -->
                             <div class="w-100 h-20 " :class='{sendbox : (messaggio.status=="sent")},{recivedbox : (messaggio.status=="recived")}' v-for="(messaggio,i) in users[this.count].messages">
-                                <div class="bg-grey w-20 message sent m-16" :class='{sent : (messaggio.status=="sent")},{recived : (messaggio.status=="recived")}' >{{users[this.count].messages[i].messaggio}} <strong class="c-black f-12">{{users[this.count].messages[i].ora}}</strong></div>
+                                <div class="bg-grey  message sent m-16 d-flex flex-justify-between" :class='{sent : (messaggio.status=="sent")},{recived : (messaggio.status=="recived")}' >
+                                    <div class="w-80">
+                                        {{users[this.count].messages[i].messaggio}}
+                                    </div>
+                                    <div class="d-flex flex-align-center">
+                                        <div>
+                                            <strong class="c-black f-12 w-10">{{users[this.count].messages[i].ora}}</strong>
+                                        </div>
+<!--                                         <select name="selettore"  class="selettore w-10 m-8">
+                                            <button>dsak</button>
+                                       </select>
+ -->                                    </div>
+                                    <div class="dropdown">
+                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" ></button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <strong class="c-black f-12 w-10 dropdown-item" @click="deletes()">delete</strong>
+                                                </li>
+                                                <li>
+                                                    <strong class="c-black f-12 w-10 dropdown-item" @click="deletes()">info</strong>
+                                                </li>
+                                            </ul>
+                                      </div>
+                                </div>
                             </div>
                     </div>
                     
@@ -94,16 +120,15 @@
                 <div class="w-100 h-10 write-bar d-flex flex-align-center flex-justify-around">
                     <div class="c-grey fe-1-5 d-flex flex-align-center ml-32"><i class="fa-regular fa-face-smile"></i></div>
                     <div class="d-flex flex-align-center flex-justify-center w-80 h-100 ">
-                            <input  type="text" class="w-70 h-40 p-16 write" placeholder="scrivi un messaggio" v-model="testo">
+                            <input  type="text" class="w-70 h-40 p-16 write" placeholder="scrivi un messaggio" v-model="testo" @keyup.enter=sent()>
                     </div>
-                    <div class="c-grey fe-1-5 d-flex flex-align-center mr-64"><i class="fa-solid fa-check" @click="sent()"></i></div>
                     <div class="c-grey fe-1-5 d-flex flex-align-center mr-64"><i class="fa-solid fa-microphone"></i></div>
                 </div>
             </div>
         </div>
     </div>
     
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>

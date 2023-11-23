@@ -1,9 +1,10 @@
 const { createApp } = Vue
 
-createApp({
+const vue=createApp({
     data() {
         return {
             count:0,
+            Nmessage:0,
             testo:"",
 
             users:[
@@ -17,34 +18,45 @@ createApp({
                                 messaggio:"hey",
                                 ora:"12:30",
                                 status:"sent",
+                                Nmessage:0,
                             },
                             {
                                 messaggio:"hey",
                                 ora:"12:31",
                                 status:"recived",
+                                Nmessage:1,
+
                             },
                             {
                                 messaggio:"come stai?",
                                 ora:"13,20",
                                 status:"sent",
+                                Nmessage:2,
+
 
                             },
                             {
                                 messaggio:"bene grazie te?",
                                 ora:"13,30",
                                 status:"recived",
+                                Nmessage:3,
+
 
                             },
                             {
                                 messaggio:"bene bene,ora vado a caccia di mostri",
                                 ora:"14,00",
                                 status:"sent",
+                                Nmessage:4,
+
 
                             },
                             {
                                 messaggio:"grande,io sono tornato da Venere poco fa",
                                 ora:"15:40",
                                 status:"recived",
+                                Nmessage:5,
+
 
                             }],
                         
@@ -377,12 +389,18 @@ createApp({
                 {
                     status:"recived",
                     ora:"adesso",
-                    messaggio:`hey purtroppo ora il tuo amico e offlline. Io sono il Bot e da ora in poi ti risponderò io!`,
+                    messaggio:`hey purtroppo ora il tuo amico è offlline. Io sono il Bot e da ora in poi ti risponderò io!`,
                     
                 };
                 this.users[0].messages.push(bot);
             }, 1200);
 
+        },
+        filterUser(){
+            console.log("sdsi")
+        },
+        deletes(){
+            console.log("oooooo")
         },
     
     },
