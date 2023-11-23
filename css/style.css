@@ -53,3 +53,5 @@
 .write-bar{background-color: rgb(200, 200, 200);}
 
 .write{border-radius: 12px;}
+
+.hidden{display: none !important;}

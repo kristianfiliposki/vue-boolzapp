@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <!-- search-bar-users -->
-                <div class="w-100 h-5  d-flex flex-justify-center flex-align-center relative">
+                <div class="w-100 h-5  d-flex flex-justify-center flex-align-center relative" >
                     <div class="lente d-flex">
                         <i class="fa-solid fa-magnifying-glass mr-8"></i>
                         <input type="text" placeholder="cerca o inizia una nuova chat" class="w-100 h-100 search-user "  v-model="ricerca" @keyup.enter=filterUser()>
@@ -45,7 +45,7 @@
                     <!-- box-users -->
                     <div class=" m-8  p-4  h-100 " >
                         <!-- user -->
-                        <div v-for="(user,i) in users" class="d-flex flex-align-start mt-16 mb-16 user" @click="changeclass(i)">
+                        <div v-for="(user,i) in users" class="d-flex flex-align-start mt-16 mb-16 user" @click="changeclass(i)" :class="{hidden: (user.value==true)}">
                             <div class="img-user w-10 h-30 m-8">
                                 <img class="w-100 h-100 img-user"  :src="user.srcImmagine" alt="">
                             </div>
@@ -104,10 +104,10 @@
                                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" ></button>
                                             <ul class="dropdown-menu">
                                                 <li>
-                                                    <strong class="c-black f-12 w-10 dropdown-item w-100" @click="deletes()">delete</strong>
+                                                    <strong class="c-black f-12 w-10 dropdown-item w-100" @click="deletes(i)">delete</strong>
                                                 </li>
                                                 <li>
-                                                    <strong class="c-black f-12 w-10 dropdown-item w-100" @click="deletes()">info</strong>
+                                                    <strong class="c-black f-12 w-10 dropdown-item w-100" @click="info(i)">info</strong>
                                                 </li>
                                             </ul>
                                       </div>

@@ -11,7 +11,7 @@ const vue=createApp({
                 {
                     nome:"kristian",
                     count:"0",
-                    value:true,
+                    value:false,
                     accesso:"12:08",
                     srcImmagine:`./img /avatar_1.jpg`,
                     messages:
@@ -64,7 +64,7 @@ const vue=createApp({
                 {
                     nome:"Giacomo",
                     count:"1",
-                    value:true,
+                    value:false,
                     accesso:"13:30",
                     srcImmagine:"./img /avatar_2.jpg",
                     messages:
@@ -105,7 +105,7 @@ const vue=createApp({
                 },                {
                     nome:"Luca",
                     count:"2",
-                    value:true,
+                    value:false,
                     accesso:"9:00",
                     srcImmagine:"./img /avatar_3.jpg",
                     messages:
@@ -142,7 +142,7 @@ const vue=createApp({
                     nome:"Alessandro",
                     accesso:"8:10",
                     count:"3",
-                    value:true,
+                    value:false,
                     srcImmagine:"./img /avatar_4.jpg",
                     messages:
                     [{
@@ -177,7 +177,7 @@ const vue=createApp({
                 },                {
                     nome:"Francesca",
                     count:"4",
-                    value:true,
+                    value:false,
                     accesso:"15:01",
                     srcImmagine:"./img /avatar_5.jpg",
                     messages:
@@ -207,7 +207,7 @@ const vue=createApp({
                 {
                     nome:"Giada",
                     count:"5",
-                    value:true,
+                    value:false,
                     accesso:"7:00",
                     srcImmagine:"./img /avatar_6.jpg",
                     messages:
@@ -221,7 +221,7 @@ const vue=createApp({
                 {
                     nome:"Augusto",
                     count:"6",
-                    value:true,
+                    value:false,
                     accesso:"12:23",
                     srcImmagine:"./img /avatar_7.jpg",
                     messages:
@@ -306,7 +306,7 @@ const vue=createApp({
                 {
                     nome:"Ferdinando",
                     count:"7",
-                    value:true,
+                    value:false,
                     accesso:"12:45",
                     srcImmagine:"./img /avatar_8.jpg",
                     messages:
@@ -379,10 +379,10 @@ const vue=createApp({
         filterUser(){
             this.users.forEach((element, index)  => {
                 element.nome;
+                (element).value=true;
                 if(element.nome.includes(this.ricerca)){
                     console.log(element.nome);
-                    element.value=false;
-                    delete element.value==true;
+                    (element).value=false;
                 }
                 else{
 /*                     console.log("non è presente");
@@ -390,10 +390,15 @@ const vue=createApp({
                 }
             });
         },
-        deletes(){
-            console.log("oooooo");
+        deletes(i){
+            this.users[this.count].messages[i];
+            delete this.users[this.count].messages[i];
+
 
         },
+        info(i){
+            console.log(this.users[this.count].messages[i]);
+        }
     
     },
     mounted() {
