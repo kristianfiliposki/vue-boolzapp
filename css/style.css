@@ -19,6 +19,7 @@
     border-radius: 15px;
     min-width: 20%;
     max-width: 30%;
+    position: relative;
 }
 .search-user{
     border: 1px white;
@@ -55,3 +56,25 @@
 .write{border-radius: 12px;}
 
 .hidden{display: none !important;}
+.info{
+    min-width: 200px;
+    min-height: 190px;
+    z-index: 999;
+    background-color: white;
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    border: 3px solid green;
+    color: black;
+    padding-left: 22px;
+    padding-top: 10px;
+    border-radius: 22px;
+    display: none;
+}
+.visible{display: block ;}
+.x
+{
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+}

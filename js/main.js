@@ -15,11 +15,13 @@ const vue=createApp({
                             messaggio:"hey",
                             ora:"12:30",
                             status:"sent",
+                            called:false,
                         },
                         {
                             messaggio:"hey",
                             ora:"12:31",
                             status:"recived",
+                            called:false,
                            
 
                         },
@@ -27,6 +29,7 @@ const vue=createApp({
                             messaggio:"come stai?",
                             ora:"13,20",
                             status:"sent",
+                            called:false,
                          
 
 
@@ -35,6 +38,7 @@ const vue=createApp({
                             messaggio:"bene grazie te?",
                             ora:"13,30",
                             status:"recived",
+                            called:false,
                   
 
                         },
@@ -42,6 +46,7 @@ const vue=createApp({
                             messaggio:"bene bene,ora vado a caccia di mostri",
                             ora:"14,00",
                             status:"sent",
+                            called:false,
                    
 
 
@@ -50,6 +55,7 @@ const vue=createApp({
                             messaggio:"grande,io sono tornato da Venere poco fa",
                             ora:"15:40",
                             status:"recived",
+                            called:false,
                         
 
 
@@ -79,35 +85,47 @@ const vue=createApp({
                     [{
                         messaggio:"ciao",
                         ora:"12:30",
-                        status:"sent"
+                        status:"sent",
+                        called:false,
+                        
                     },
                     {
                         messaggio:"A bello che dici?",
                         ora:"12:31",
-                        status:"recived"
+                        status:"recived",
+                        called:false,
+                        
                     },
                     {
                         messaggio:"tutto bene te?",
                         ora:"13,20",
-                        status:"sent"
+                        status:"sent",
+                        called:false,
+                        
 
                     },
                     {
                         messaggio:"bene grazie te?",
                         ora:"13,30",
-                        status:"recived"
+                        status:"recived",
+                        called:false,
+                        
 
                     },
                     {
                         messaggio:"io benissimo!",
                         ora:"14,00",
-                        status:"sent"
+                        status:"sent",
+                        called:false,
+                        
 
                     },
                     {
                         messaggio:"per fortuna",
                         ora:"15:40",
-                        status:"recived"
+                        status:"recived",
+                        called:false,
+                        
 
                     }],                    
                 },                
@@ -122,29 +140,34 @@ const vue=createApp({
                     [{
                         messaggio:"woooo",
                         ora:"12:30",
-                        status:"sent"
+                        status:"sent",
+                        called:false,
                     },
                     {
                         messaggio:"heyla",
                         ora:"12:31",
-                        status:"recived"
+                        status:"recived",
+                        called:false,
                     },
                     {
                         messaggio:"qual buon vento la porta in questa chat?",
                         ora:"13,20",
-                        status:"sent"
+                        status:"sent",
+                        called:false,
 
                     },
                     {
                         messaggio:"La tramontana",
                         ora:"13,30",
-                        status:"recived"
+                        status:"recived",
+                        called:false,
 
                     },
                     {
                         messaggio:"ok,ciao,è stato bello",
                         ora:"14,00",
-                        status:"sent"
+                        status:"sent",
+                        called:false,
 
                     },
                 ]
@@ -160,29 +183,34 @@ const vue=createApp({
                     [{
                         messaggio:"allora ti ho scoperto",
                         ora:"12:30",
-                        status:"sent"
+                        status:"sent",
+                        called:false,
                     },
                     {
                         messaggio:"dimmi",
                         ora:"12:31",
-                        status:"recived"
+                        status:"recived",
+                        called:false,
                     },
                     {
                         messaggio:"mi hai mangiato tutte la patine",
                         ora:"13,20",
-                        status:"sent"
+                        status:"sent",
+                        called:false,
 
                     },
                     {
                         messaggio:"e vabbe,pazienza!",
                         ora:"13,30",
-                        status:"recived"
+                        status:"recived",
+                        called:false,
 
                     },
                     {
                         messaggio:"non parlarmi piu!!!",
                         ora:"14,00",
-                        status:"sent"
+                        status:"sent",
+                        called:false,
 
                     },
                 ]
@@ -198,23 +226,27 @@ const vue=createApp({
                     [{
                         messaggio:"sisi",
                         ora:"12:30",
-                        status:"sent"
+                        status:"sent",
+                        called:false,
                     },
                     {
                         messaggio:"cosa?",
                         ora:"12:31",
-                        status:"recived"
+                        status:"recived",
+                        called:false,
                     },
                     {
                         messaggio:"vieni domani?",
                         ora:"13,20",
-                        status:"sent"
+                        status:"sent",
+                        called:false,
 
                     },
                     {
                         messaggio:"boh",
                         ora:"13,30",
-                        status:"recived"
+                        status:"recived",
+                        called:false,
 
                     },]
                 },
@@ -245,76 +277,89 @@ const vue=createApp({
                         messaggio:"hey",
                         ora:"12:30",
                         status:"sent",
+                        called:false,
                     },
                     {
                         messaggio:"hey",
                         ora:"12:31",
                         status:"recived",
+                        called:false,
                     },
                     {
                         messaggio:"come stai?",
                         ora:"13,20",
                         status:"sent",
+                        called:false,
 
                     },
                     {
                         messaggio:"bene grazie te?",
                         ora:"13,30",
                         status:"recived",
+                        called:false,
 
                     },
                     {
                         messaggio:"che ti dico come sempre",
                         ora:"14,00",
                         status:"sent",
+                        called:false,
 
                     },
                     {
                         messaggio:"stai pensando ancora a franceschina del ducato di savoia?",
                         ora:"15:40",
                         status:"recived",
+                        called:false,
 
                     },
                     {
                         messaggio:"purtroppo si",
                         ora:"13,30",
                         status:"sent",
+                        called:false,
 
                     },
                     {
                         messaggio:"ma tu sei matto",
                         ora:"14,00",
                         status:"recived",
+                        called:false,
 
                     },
                     {
                         messaggio:"le nostre famiglie si sono odiate per quel maiale",
                         ora:"15:40",
                         status:"recived",
+                        called:false,
 
                     },
                     {
                         messaggio:"non fosse stato per lui",
                         ora:"14,00",
                         status:"sent",
+                        called:false,
 
                     },
                     {
                         messaggio:"ora ci hanno fatto le salsicce",
                         ora:"15:40",
                         status:"recived",
+                        called:false,
 
                     },
                     {
                         messaggio:"pensa che spreco",
                         ora:"13,30",
                         status:"recived",
+                        called:false,
 
                     },
                     {
                         messaggio:"il maiale dalle uova d'oro",
                         ora:"14,00",
                         status:"sent",
+                        called:false,
 
                     },
                 ],
@@ -331,34 +376,40 @@ const vue=createApp({
                         messaggio:"hey",
                         ora:"12:30",
                         status:"sent",
+                        called:false,
                     },
                     {
                         messaggio:"hey",
                         ora:"12:31",
                         status:"recived",
+                        called:false,
                     },
                     {
                         messaggio:"come stai?",
                         ora:"13,20",
                         status:"sent",
+                        called:false,
 
                     },
                     {
                         messaggio:"bene grazie te?",
                         ora:"13,30",
                         status:"recived",
+                        called:false,
 
                     },
                     {
                         messaggio:"come stai?",
                         ora:"14,00",
                         status:"sent",
+                        called:false,
 
                     },
                     {
                         messaggio:"bene grazie",
                         ora:"15:40",
                         status:"recived",
+                        called:false,
 
                     }],
                 },
@@ -421,16 +472,16 @@ const vue=createApp({
         /* cancella il messaggio selezionato */
         deletes(i){
             this.users[this.count].messages[i];
-            delete  this.users[this.count].messages[i]
-
-
-
-
+            delete  this.users[this.count].messages[i];
         },
         /* scopri le informazione del messaggio */
         info(i){
-            console.log(this.users[this.count].messages[i]);
-        }
+            this.users[this.count].messages[i].called=true;
+        },
+        invisible(i){
+            this.users[this.count].messages[i].called=false;
+        },
+
     
     },
     mounted() {

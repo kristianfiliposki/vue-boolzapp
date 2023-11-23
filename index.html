@@ -67,11 +67,11 @@
                 <div class=" h-10 bg-white d-flex flex-align-center flex-justify-between">
                     <div class="d-flex flex-justify-between">
                         <div class="img-user w-10 h-80 m-8 ">
-                            <img class="w-100 h-100 img-user"  :src="users[this.count].srcImmagine" alt="">
+                            <img class="w-100 h-100 img-user"  :src="users[count].srcImmagine" alt="">
                         </div>
                         <div class=" w-100 h-100 mt-8">
-                            <h3 class="fe-1-5">{{users[this.count].nome}}</h3>
-                            <div class="fe-0-7 flex-align-">ultimo messaggio inviato: {{users[this.count].accesso}}</div> 
+                            <h3 class="fe-1-5">{{users[count].nome}}</h3>
+                            <div class="fe-0-7 flex-align-">ultimo messaggio inviato: {{users[count].accesso}}</div> 
                         </div>
                     </div>
                     
@@ -87,18 +87,18 @@
                     <!-- messaggi box-->
                     <div class="w-100" id="messageSpace" >
                             <!-- riproduci  ogni messaggio salvato nei dati di ogni utente -->
-                            <div class="w-100 h-20 " :class='{sendbox : (messaggio.status=="sent")},{recivedbox : (messaggio.status=="recived")}' v-for="(messaggio,i) in users[this.count].messages">
+                            <div class="w-100 h-20 " :class='{sendbox : (messaggio.status=="sent")},{recivedbox : (messaggio.status=="recived")}' v-for="(messaggio,i) in users[count].messages">
                                 <div class="bg-grey  message sent m-16 d-flex flex-justify-between" :class='{sent : (messaggio.status=="sent")},{recived : (messaggio.status=="recived")}' >
                                     <!-- componimento dei messagi -->
                                     <div class="w-80">
                                         <!-- corpo del messaggio -->
-                                        {{users[this.count].messages[i].messaggio}}
+                                        {{users[count].messages[i].messaggio}}
                                     </div>
                                     <!-- info sms -->
                                     <div class="d-flex flex-align-center">
                                         <!-- ora -->
                                         <div>
-                                            <strong class="c-black f-12 w-10">{{users[this.count].messages[i].ora}}</strong>
+                                            <strong class="c-black f-12 w-10">{{users[count].messages[i].ora}}</strong>
                                         </div>
                                    </div>
                                    <!-- opzioni del sms -->
@@ -114,7 +114,22 @@
                                                     <strong class="c-black f-12 w-10 dropdown-item w-100" @click="info(i)">info</strong>
                                                 </li>
                                             </ul>
-                                      </div>
+                                        </button>
+                                    </div>
+                                    <div class="info" :class="{visible : (users[count].messages[i].called==true)}">
+                                        <div class="d-flex justify-end" @click="invisible(i)">
+                                            <div class="d-flex flex-justify-center flex-align-center mr-16 rounded x">x</div>
+                                        </div>
+                                        <div>
+                                            contenuto: <strong class="c-green">{{users[count].messages[i].messaggio}}</strong>
+                                        </div>
+                                        <div>
+                                            ora di invio: <strong class="c-green">{{users[count].messages[i].ora}}</strong>
+                                        </div>
+                                        <div>
+                                            stato del messaggio: <strong class="c-green">{{users[count].messages[i].status}}</strong>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                     </div>

@@ -11,6 +11,8 @@
 	margin: 0 auto;
 }
 
+.rounded{border-radius: 15px;}
+
 /*** FLEX ***/
 .d-flex {	display: flex;	}
 .flex-row {	flex-direction: row; }
