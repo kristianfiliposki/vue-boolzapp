@@ -89,24 +89,28 @@
                             <!-- riproduci  ogni messaggio salvato nei dati di ogni utente -->
                             <div class="w-100 h-20 " :class='{sendbox : (messaggio.status=="sent")},{recivedbox : (messaggio.status=="recived")}' v-for="(messaggio,i) in users[this.count].messages">
                                 <div class="bg-grey  message sent m-16 d-flex flex-justify-between" :class='{sent : (messaggio.status=="sent")},{recived : (messaggio.status=="recived")}' >
+                                    <!-- componimento dei messagi -->
                                     <div class="w-80">
+                                        <!-- corpo del messaggio -->
                                         {{users[this.count].messages[i].messaggio}}
                                     </div>
+                                    <!-- info sms -->
                                     <div class="d-flex flex-align-center">
+                                        <!-- ora -->
                                         <div>
                                             <strong class="c-black f-12 w-10">{{users[this.count].messages[i].ora}}</strong>
                                         </div>
-<!--                                         <select name="selettore"  class="selettore w-10 m-8">
-                                            <button>dsak</button>
-                                       </select>
- -->                                    </div>
+                                   </div>
+                                   <!-- opzioni del sms -->
                                     <div class="dropdown">
                                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" ></button>
                                             <ul class="dropdown-menu">
                                                 <li>
+                                                    <!-- delete -->
                                                     <strong class="c-black f-12 w-10 dropdown-item w-100" @click="deletes(i)">delete</strong>
                                                 </li>
                                                 <li>
+                                                    <!-- info -->
                                                     <strong class="c-black f-12 w-10 dropdown-item w-100" @click="info(i)">info</strong>
                                                 </li>
                                             </ul>
@@ -118,10 +122,13 @@
                 </div>
                 <!-- write-bar -->
                 <div class="w-100 h-10 write-bar d-flex flex-align-center flex-justify-around">
+                    <!-- emoji ?-->
                     <div class="c-grey fe-1-5 d-flex flex-align-center ml-32"><i class="fa-regular fa-face-smile"></i></div>
+                    <!-- scrivi il tuo messaggio -->
                     <div class="d-flex flex-align-center flex-justify-center w-80 h-100 ">
                             <input  type="text" class="w-70 h-40 p-16 write" placeholder="scrivi un messaggio" v-model="testo" @keyup.enter=sent()>
                     </div>
+                    <!-- fai un audio ?-->
                     <div class="c-grey fe-1-5 d-flex flex-align-center mr-64"><i class="fa-solid fa-microphone"></i></div>
                 </div>
             </div>

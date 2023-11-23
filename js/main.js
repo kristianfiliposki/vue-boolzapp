@@ -421,7 +421,8 @@ const vue=createApp({
         /* cancella il messaggio selezionato */
         deletes(i){
             this.users[this.count].messages[i];
-            this.users.splice(this.users[this.count].messages[i]);
+            delete  this.users[this.count].messages[i]
+
 
 
 
