@@ -372,20 +372,21 @@ const vue=createApp({
                     messaggio:`hey purtroppo ora il tuo amico è offlline. Io sono il Bot e da ora in poi ti risponderò io!`,
                     
                 };
-                this.users[this.countè].messages.push(bot);
+                this.users[this.count].messages.push(bot);
             }, 1200);
 
         },
         filterUser(){
-            this.users.forEach(element => {
+            this.users.forEach((element, index)  => {
                 element.nome;
                 if(element.nome.includes(this.ricerca)){
                     console.log(element.nome);
-                    delete this.users[element.nome.includes(this.ricerca)];
+                    element.value=false;
+                    delete element.value==true;
                 }
                 else{
-                    console.log("non è presente");
-
+/*                     console.log("non è presente");
+ */ 
                 }
             });
         },
