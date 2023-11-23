@@ -470,9 +470,9 @@ const vue=createApp({
             });
         },
         /* cancella il messaggio selezionato */
-        deletes(i){
-            this.users[this.count].messages[i];
-            delete  this.users[this.count].messages[i];
+
+        deletes(i) {
+            this.users[this.count].messages.splice(i, 1);
         },
         /* scopri le informazione del messaggio */
         info(i){
